@@ -1,12 +1,15 @@
+using Ghiman_Antonia_Lab2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Ghiman_Antonia_Lab2.Models;
 
 namespace Ghiman_Antonia_Lab2.Pages.Books;
 
+[Authorize(Roles = "Admin")]
 public class DeleteModel : PageModel
 {
+   
     private readonly Ghiman_Antonia_Lab2Context _context;
 
     public DeleteModel(Ghiman_Antonia_Lab2Context context)
